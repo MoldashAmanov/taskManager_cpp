@@ -13,7 +13,7 @@ class Task
         // Геттеры - это методы для получения данных
         // const после метода означает, что метод не изменяет объект
         std::string getTitle() const;
-        bool isCompleted() const;
+        bool getIsCompleted() const;
 
         // Методы изменения состояния
         void markAsCompleted();
@@ -23,7 +23,7 @@ class Task
 
         // Десериализация: создание объекта из строки
         // static - метод принадлежит классу, а не объекту
-        static Task deserealize(const std::string& data);
+        static Task deserialize(const std::string& data);
 
         // Вывод задачи на экран
         void display(int index) const;

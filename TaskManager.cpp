@@ -3,7 +3,7 @@
 #include <iostream>
 
 // Конструктор: загружаем задачи из файла
-TaskManager::TaskManager(const std:;string& fname) : filename(fname)
+TaskManager::TaskManager(const std::string& fname) : filename(fname)
 {
     loadFromFile();
 }
@@ -28,7 +28,7 @@ void TaskManager::loadFromFile()
             if (!line.empty())
             {
                 // Десериализуем строку в объект Task
-                tasks.push_back(Task::deserealize(line));
+                tasks.push_back(Task::deserialize(line));
             }
         }
         file.close();
@@ -78,7 +78,7 @@ void TaskManager::displayTasks() const
 void TaskManager::completedTask(int index)
 {
     // Проверяем корректность индекса 
-    if (index >= 1 && index <= static_cast<int>(tasks.size()));
+    if (index >= 1 && index <= static_cast<int>(tasks.size()))
     {
         tasks[index - 1].markAsCompleted();
     

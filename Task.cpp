@@ -1,4 +1,5 @@
-#include "task.cpp"
+#include "Task.h"
+#include <string>
 #include <iostream>
 
 // Реализация конструктора
@@ -9,7 +10,7 @@ std::string Task::getTitle() const
 {
     return title;
 }
-bool Task::isCompleted() const
+bool Task::getIsCompleted() const
 {
     return isCompleted;
 }
@@ -24,10 +25,10 @@ std::string Task::serialize() const
     return title + "|" + (isCompleted ? "1" : "0");
 }
 // Создание объекта из строки
-Task Task::deserealize(const std::string& data)
+Task Task::deserialize(const std::string& data)
 {
     // Находим разделитель
-    size_t pos = data.find('|')
+    size_t pos = data.find('|');
 
     // Извлекаем название
     std::string title = data.substr(0, pos);
